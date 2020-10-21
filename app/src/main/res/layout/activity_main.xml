@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,192 +7,241 @@
     android:layout_centerHorizontal="false"
     tools:context=".MainActivity">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
-        android:layout_below="@id/materialCardView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:padding="8dp"
-        app:cardCornerRadius="16dp"
-        android:layout_centerHorizontal="true"
-        app:cardBackgroundColor="#9EBFDA">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            app:cardBackgroundColor="#BEDFFA"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/textColorPurple"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="Ehtiyac olan qida maddəsi (kq)"
+                    android:textSize="20sp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/border"
+                    android:padding="8dp">
+
+                    <TableRow
+                        android:gravity="center_horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="AZOT"
+                            style="@style/textstyle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:text="FOSFOR"
+                            style="@style/textstyle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:text="KALIUM"
+                            style="@style/textstyle" />
+                    </TableRow>
+
+                    <TableRow
+                        android:gravity="center_horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/azot"
+                            style="@style/numberStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/fosfor"
+                            style="@style/numberStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/kalium"
+                            style="@style/numberStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:text="" />
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/border"
+                    android:padding="8dp">
+
+                    <TableRow style="@style/rowstyle">
+
+                        <TextView
+                            style="@style/textColorPurple"
+                            android:layout_column="1"
+                            android:layout_weight="2"
+                            android:text="ƏKİN PROSESİNDƏ"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            style="@style/textColorPurple"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="kq/ha"
+                            android:textSize="20sp" />
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/rowstyle"
+                        android:background="@drawable/border"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_column="1"
+                            android:layout_weight="2"
+                            android:text="ammofos"
+                            style="@style/textstyle" />
+
+                        <TextView
+                            android:id="@+id/ammofos"
+                            style="@style/numberStyle"
+                            android:layout_column="2"
+                            android:layout_weight="1" />
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/rowstyle"
+                        android:paddingTop="16dp">
+
+                        <TextView
+                            style="@style/textColorPurple"
+                            android:layout_column="1"
+                            android:layout_weight="2"
+                            android:text="YEMLƏMƏ GÜBRƏSİ"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            style="@style/textColorPurple"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="kq/ha"
+                            android:textSize="20sp" />
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/rowstyle"
+                        android:background="@drawable/border"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_column="1"
+                            android:layout_weight="2"
+                            android:text="ammonium nitrat"
+                            style="@style/textstyle" />
+
+                        <TextView
+                            android:id="@+id/a_nitrat"
+                            style="@style/numberStyle"
+                            android:layout_column="2"
+                            android:layout_weight="1" />
+
+                    </TableRow>
+                </TableLayout>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/materialCardView"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="#EFCDF4"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/textColorPurple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Planlaşdırılan məhsuldarlıq"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/fertility"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="sentner"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/calculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:layout_below="@id/materialCardView2"
+            android:layout_alignStart="@id/materialCardView2"
+            android:layout_alignLeft="@id/materialCardView2"
+            android:text="Hesabla" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PLANLAŞDIRILAN MƏHSULDARLIQ (sentner)"
-                android:textSize="16sp"
-                />
-
-            <EditText
-                android:id="@+id/pm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:paddingTop="32dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="EHTİYAC OLAN QİDA MADDƏSİ (KQ)"
-                android:textSize="16sp"/>
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:weightSum="3"
-                    android:gravity="center">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="AZOT"
-                        app:boxBackgroundColor="#9EBFDA"
-                        android:layout_weight="1"
-                        android:layout_column="1">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="FOSFOR"
-                        app:boxBackgroundColor="#9EBFDA"
-                        android:layout_weight="1"
-                        android:layout_column="2">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="KALIUM"
-                        app:boxBackgroundColor="#9EBFDA"
-                        android:layout_weight="1"
-                        android:layout_column="3">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                </LinearLayout>
-        </LinearLayout>
-
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView2"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        app:cardBackgroundColor="@color/purple_200">
-
-        <TableLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_below="@id/materialCardView2"
+            android:layout_alignEnd="@id/materialCardView2"
+            android:layout_alignRight="@id/materialCardView2"
+            android:text="sil" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_column="1"
-                    android:text="ƏKİN PROSESİNDƏ"
-                    android:textSize="24sp"/>
-
-                <TextView
-                    android:layout_column="2"
-                    android:padding="8dp"
-                    android:text="kq/ha"
-                    android:textSize="16sp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_column="1"
-                    android:text="ammofos"
-                    android:textSize="16sp"/>
-
-                <TextView android:layout_column="2" />
-            </TableRow>
-
-            <TableRow
-                android:paddingTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_column="1"
-                    android:text="YEMLƏMƏ GÜBRƏSİ"
-                    android:textSize="24sp"
-                    />
-
-                <TextView
-                    android:layout_column="2"
-                    android:padding="8dp"
-                    android:text="kq/ha"
-                    android:textSize="16sp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_column="1"
-                    android:text="ammonium nitrat"
-                    android:textSize="16sp"
-                    />
-
-                <TextView android:layout_column="2" />
-
-            </TableRow>
-        </TableLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/materialCardView"
-        android:layout_alignLeft="@id/materialCardView"
-        android:layout_alignStart="@id/materialCardView"
-        android:text="Button" />
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/materialCardView"
-        android:layout_alignRight="@id/materialCardView"
-        android:layout_alignEnd="@id/materialCardView"
-        android:text="Button" />
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
